@@ -1,16 +1,23 @@
 export class BowlingGame {
     private totalScore: number = 0;
-    private isItSpare: boolean = false;
+    private scoreHistory: number[] = [];
 
     roll(pinDowns: number) {
-        this.totalScore += this.isItSpare ? pinDowns * 2 : pinDowns;
+        this.scoreHistory.push(pinDowns);
 
-        if (this.totalScore >= 10) {
-            this.isItSpare = true;
+        const twoPreviousScores = this.scoreHistory.slice(this.scoreHistory.length - 3, this.scoreHistory.length - 2);
+        const sumOfTwoPreviousScores = this.sumArray(twoPreviousScores);
+
+        if (sumOfTwoPreviousScores >= 10) {
+            this.scoreHistory[this.scoreHistory.length - 1] += pinDowns;
         }
     }
 
     score(): number {
-        return this.totalScore;
+        return this.sumArray(this.scoreHistory);
+    }
+
+    private sumArray(arr: number[]) {
+        return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
     }
 }
