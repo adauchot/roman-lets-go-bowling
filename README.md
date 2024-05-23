@@ -1,8 +1,8 @@
 # roman-lets-go-bowling
 * If first roll is 1 and second is 1, the score should be 2
 * If i hit 3 then 7 it should be spare then if I hit 2 the result should be 14
+* If i hit 10 it should be a strike then I hit a 2 and a 3 the result should be 20
 * If i hit 3 then 7 it should be spare then if I hit a strike the result should be 20
-* If i hit 10 it should be a strike
 * If I hit 10 it should be a strike then if I hit a 4 and a 2 the result should be 16
 * If I hit a strike then a strike the result should be 20
 * If a hit a strike then a spare the result should be 20
